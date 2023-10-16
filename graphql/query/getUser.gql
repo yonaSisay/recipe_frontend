@@ -1,0 +1,15 @@
+query getUser(
+	$filter: users_bool_exp
+	$offset: Int
+	$limit: Int
+	$order: [users_order_by!]
+) {
+	users(where: $filter, limit: $limit, offset: $offset, order_by: $order) {
+		id
+		image_url
+		first_name
+		last_name
+		email
+		bio
+	}
+}

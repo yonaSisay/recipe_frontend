@@ -1,0 +1,58 @@
+query singleRecipe($id: uuid!) {
+	recipes_by_pk(id: $id) {
+		id
+		title
+		duration
+		description
+		coverImage
+		created_at
+		likes_aggregate {
+			aggregate {
+				count
+			}
+		}
+		reviews_aggregate {
+			aggregate {
+				avg {
+					rating
+				}
+			}
+		}
+		recipe_images {
+			id
+			image_url
+		}
+		recipe_ingredients {
+			id
+			ingredient {
+				image_url
+				name
+				id
+			}
+			amount
+		}
+		recipe_categories {
+			category_id
+			category {
+				name
+				id
+			}
+		}
+		likes {
+			id
+			user_id
+			recipe_id
+		}
+		steps {
+			id
+			description
+			step
+		}
+		user {
+			id
+			image_url
+			first_name
+			last_name
+		}
+	}
+}

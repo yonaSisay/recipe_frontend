@@ -1,0 +1,6 @@
+mutation changeProfile($id: uuid!, $image: String!) {
+	update_users_by_pk(pk_columns: { id: $id }, _set: { image_url: $image }) {
+		id
+		image_url
+	}
+}

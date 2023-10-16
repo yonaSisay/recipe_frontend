@@ -1,0 +1,5 @@
+mutation addImage($images: [String]!) {
+	imageUpload(arg1: { images: $images }) {
+		urls
+	}
+}

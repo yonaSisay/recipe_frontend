@@ -1,0 +1,27 @@
+mutation addRecipe($input: [recipes_insert_input!]!) {
+	insert_recipes(objects: $input) {
+		returning {
+			id
+			title
+			coverImage
+			duration
+			description
+			steps {
+				description
+				step
+			}
+			recipe_ingredients {
+				ingredient_id
+				amount
+			}
+			recipe_images {
+				image_url
+			}
+			recipe_categories {
+				category {
+					name
+				}
+			}
+		}
+	}
+}

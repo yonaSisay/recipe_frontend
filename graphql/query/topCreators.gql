@@ -1,0 +1,13 @@
+query {
+	users(limit: 20, order_by: { recipes_aggregate: { count: desc } }) {
+		id
+		image_url
+		first_name
+		last_name
+		recipes_aggregate {
+			aggregate {
+				count
+			}
+		}
+	}
+}

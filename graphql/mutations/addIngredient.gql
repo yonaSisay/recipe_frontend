@@ -1,0 +1,9 @@
+mutation addIngredient($name: String!, $image: String!) {
+	insert_ingredients(objects: { name: $name, image_url: $image }) {
+		returning {
+			id
+			name
+			image_url
+		}
+	}
+}

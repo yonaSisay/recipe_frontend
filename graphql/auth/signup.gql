@@ -1,0 +1,19 @@
+mutation Signup(
+	$email: String!
+	$password: String!
+	$first_name: String!
+	$last_name: String!
+) {
+	signup(
+		arg1: {
+			email: $email
+			password: $password
+			first_name: $first_name
+			last_name: $last_name
+		}
+	) {
+		id
+		token
+		role
+	}
+}

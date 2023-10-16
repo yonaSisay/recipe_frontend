@@ -1,0 +1,7 @@
+mutation Like($input: like_insert_input!) {
+	insert_like_one(object: $input) {
+		id
+		recipe_id
+		user_id
+	}
+}

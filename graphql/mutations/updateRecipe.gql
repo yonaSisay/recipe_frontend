@@ -1,0 +1,30 @@
+mutation updateRecipe(
+	$id: uuid!
+	$input: recipes_set_input!
+	$categories: [recipe_categories_insert_input!]!
+	$ingredients: [recipe_ingredients_insert_input!]!
+	$steps: [steps_insert_input!]!
+) {
+	delete_recipe_categories(where: { recipe_id: { _eq: $id } }) {
+		affected_rows
+	}
+	delete_recipe_ingredients(where: { recipe_id: { _eq: $id } }) {
+		affected_rows
+	}
+	delete_steps(where: { recipe_id: { _eq: $id } }) {
+		affected_rows
+	}
+	insert_recipe_categories(objects: $categories) {
+		affected_rows
+	}
+	insert_recipe_ingredients(objects: $ingredients) {
+		affected_rows
+	}
+	insert_steps(objects: $steps) {
+		affected_rows
+	}
+	update_recipes_by_pk(pk_columns: { id: $id }, _set: $input) {
+		id
+		title
+	}
+}

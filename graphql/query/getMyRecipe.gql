@@ -1,0 +1,28 @@
+query getRecipe(
+	$filter: recipes_bool_exp
+	$offset: Int
+	$order: [recipes_order_by!]
+) {
+	recipes(where: $filter, offset: $offset, order_by: $order) {
+		id
+		title
+		created_at
+		duration
+		coverImage
+		likes {
+			id
+		}
+		reviews_aggregate {
+			aggregate {
+				avg {
+					rating
+				}
+			}
+		}
+		likes_aggregate {
+			aggregate {
+				count
+			}
+		}
+	}
+}

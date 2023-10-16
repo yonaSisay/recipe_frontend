@@ -1,0 +1,5 @@
+mutation unLike($user_id: uuid!, $recipe_id: uuid!) {
+	delete_like_by_pk(recipe_id: $recipe_id, user_id: $user_id) {
+		id
+	}
+}

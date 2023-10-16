@@ -1,0 +1,36 @@
+query MyQuery {
+	recipes(
+		where: { reviews: { rating: { _is_null: false } } }
+		order_by: { reviews_aggregate: { avg: { rating: desc_nulls_last } } }
+		limit: 20
+	) {
+		id
+		title
+		created_at
+		duration
+		coverImage
+		likes {
+			id
+			user_id
+			recipe_id
+		}
+		reviews_aggregate {
+			aggregate {
+				avg {
+					rating
+				}
+			}
+		}
+		likes_aggregate {
+			aggregate {
+				count
+			}
+		}
+		recipe_categories {
+			category {
+				id
+				name
+			}
+		}
+	}
+}
