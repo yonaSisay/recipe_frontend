@@ -64,10 +64,10 @@ definePageMeta({
 <template>
 	<div>
 		<Hero />
-		<div class="px-4 sm:px-10 bg-[#f8faff]">
+		<div class="dark:bg-[#352F44] px-4 sm:px-10 bg-[#f8faff]">
 			<section class="my-4 py-4">
 				<h2
-					class="text-2xl font-semibold text-orange-500 relative inline-block after:absolute after:content after:w-2/4 after:h-0.5 after:bottom-0 after:left-1/4 after:bg-orange-500 after:rounded-lg after:transform after:-translate-x-1/4 after:transition-all after:duration-300"
+					class="text-2xl font-semibold text-orange-500 dark:text-[#B9B4C7] relative inline-block after:absolute after:content after:w-2/4 after:h-0.5 after:bottom-0 after:left-1/4 after:bg-orange-500 dark:after:bg-[#B9B4C7] after:rounded-lg after:transform after:-translate-x-1/4 after:transition-all after:duration-300"
 				>
 					Our top creators
 				</h2>
@@ -86,7 +86,7 @@ definePageMeta({
 			</section>
 			<section class="mt-16 py-8 sm:px-20 md:px-0">
 				<h2
-					class="text-2xl font-semibold text-orange-500 relative inline-block after:absolute after:content after:w-2/4 after:h-0.5 after:bottom-0 after:left-1/4 after:bg-orange-500 after:rounded-lg after:transform after:-translate-x-1/4 after:transition-all after:duration-300"
+					class="text-2xl font-semibold text-orange-500 dark:text-[#B9B4C7] relative inline-block after:absolute after:content after:w-2/4 after:h-0.5 after:bottom-0 after:left-1/4 after:bg-orange-500 dark:after:bg-[#B9B4C7] after:rounded-lg after:transform after:-translate-x-1/4 after:transition-all after:duration-300"
 				>
 					Latest recipes
 				</h2>
@@ -102,9 +102,9 @@ definePageMeta({
 					/>
 				</div>
 			</section>
-			<section class="my-4 py-4">
+			<section class="mt-4 py-4">
 				<h2
-					class="text-2xl font-semibold text-orange-500 relative inline-block after:absolute after:content after:w-2/4 after:h-0.5 after:bottom-0 after:left-1/4 after:bg-orange-500 after:rounded-lg after:transform after:-translate-x-1/4 after:transition-all after:duration-300"
+					class="text-2xl font-semibold text-orange-500 dark:text-[#B9B4C7] relative inline-block after:absolute after:content after:w-2/4 after:h-0.5 after:bottom-0 after:left-1/4 after:bg-orange-500 dark:after:bg-[#B9B4C7] after:rounded-lg after:transform after:-translate-x-1/4 after:transition-all after:duration-300"
 				>
 					Highly rated recipes
 				</h2>

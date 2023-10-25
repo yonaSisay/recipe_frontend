@@ -61,7 +61,7 @@ onError((error) => {
 	<div class="flex h-screen items-center justify-center">
 		<form
 			@submit.prevent="onSubmit"
-			class="flex flex-col bg-gradient-to-b from-orange-300 via-orange-500 to-orange-700 w-[350px] h-[350px] px-4 rounded-2xl text-white shadow-2xl -rotate-3 hover:rotate-0 hover:scale-110 hover:-translate-y-1 duration-500"
+			class="flex flex-col bg-orange-400 dark:bg-[#5C5470] w-[350px] h-[350px] px-4 rounded-2xl text-white shadow-2xl -rotate-3 hover:rotate-0 hover:scale-110 hover:-translate-y-1 duration-500"
 		>
 			<h2 class="mx-auto mt-6 text-3xl font-medium">login</h2>
 

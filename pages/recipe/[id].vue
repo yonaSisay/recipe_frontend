@@ -144,9 +144,11 @@ definePageMeta({
 });
 </script>
 <template>
-	<div class="px-8 sm:px-24">
+	<div class="min-h-screen px-8 sm:px-24">
 		<div class="w-full flex flex-wrap gap-x-8 mt-12">
-			<h2 class="text-2xl font-semibold text-orange-500 flex mt-2 lg:w-[40%]">
+			<h2
+				class="text-2xl font-semibold text-orange-500 dark:text-[#FAF0E6] flex mt-2 lg:w-[40%]"
+			>
 				{{ recipe?.title }}
 				<img
 					v-show="store.isAuthenticated"
@@ -163,10 +165,10 @@ definePageMeta({
 					alt="avatar"
 					@click="toProfile(recipe?.user?.id)"
 				/>
-				<div class="text-sm text-gray-500 my-auto">
+				<div class="text-sm text-gray-500 dark:text-[#FAF0E6] my-auto">
 					{{ `by ${recipe?.user?.first_name} ${recipe?.user?.last_name}` }}
 				</div>
-				<div class="text-sm text-gray-500 my-auto">
+				<div class="text-sm text-gray-500 dark:text-[#FAF0E6] my-auto">
 					| {{ new Date(recipe?.created_at).toLocaleDateString() }}
 				</div>
 				<div class="mt-2">
@@ -185,7 +187,9 @@ definePageMeta({
 						name="mdi:heart-outline"
 						class="cursor-pointer text-red-500"
 					/>
-					<span class="text-sm text-gray-500 my-auto">{{ count }} likes</span>
+					<span class="text-sm text-gray-500 dark:text-[#FAF0E6] my-auto"
+						>{{ count }} likes</span
+					>
 				</div>
 
 				<div class="hidden sm-block flex items-center text-yellow-500 my-auto">
@@ -224,17 +228,19 @@ definePageMeta({
 			</section>
 
 			<section class="w-full lg:w-[60%] mt-8">
-				<p class="text-gray-500">
+				<p class="text-gray-500 dark:text-[#FAF0E6]">
 					{{ recipe?.description }}
 				</p>
 				<div class="flex flex-col md:flex-row">
 					<div class="w-full md:w-[40%] lg:w-[30%]">
-						<h3 class="text-xl text-orange-500 font-semibold mt-8">
+						<h3
+							class="text-xl text-orange-500 dark:text-[#FAF0E6] font-semibold mt-8"
+						>
 							Ingredients
 						</h3>
 						<ul
 							v-if="!loading"
-							class="list-disc list-inside text-gray-500 mt-4"
+							class="list-disc list-inside text-gray-500 dark:text-[#FAF0E6] mt-4"
 						>
 							<li
 								v-for="ingredient in recipe?.recipe_ingredients"
@@ -255,14 +261,20 @@ definePageMeta({
 					</div>
 
 					<div class="w-full md:w-[60%] lg:w-[70%] lg:ml-4">
-						<h3 class="text-xl text-orange-500 font-semibold mt-8">
+						<h3
+							class="text-xl text-orange-500 dark:text-[#FAF0E6] font-semibold mt-8"
+						>
 							Steps to follow
 						</h3>
 						<ol
 							v-if="!loading"
 							class="list-decimal list-inside text-gray-500 mt-4 space-y-4"
 						>
-							<li v-for="step in recipe.steps" :key="step.id">
+							<li
+								class="dark:text-[#FAF0E6]"
+								v-for="step in recipe.steps"
+								:key="step.id"
+							>
 								{{ step.description }}
 							</li>
 						</ol>
@@ -273,7 +285,9 @@ definePageMeta({
 		<div class="w-full flex flex-col lg:flex-row gap-x-8 mt-10">
 			<Review :recipe_id="route.params.id" />
 			<section class="w-full lg:w-[60%] mt-8">
-				<h3 class="text-xl text-orange-500 font-semibold">Related Recipe</h3>
+				<h3 class="text-xl text-orange-500 dark:text-[#FAF0E6] font-semibold">
+					Related Recipe
+				</h3>
 				<div
 					v-if="!loading && relatedRecipes?.length > 0"
 					class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center flex-wrap gap-x-3 gap-y-4 mt-8"

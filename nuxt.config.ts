@@ -9,7 +9,12 @@ export default defineNuxtConfig({
 		"nuxt-rating",
 		"nuxt-icon",
 		"@vee-validate/nuxt",
+		"@vueuse/nuxt",
+		"@nuxtjs/color-mode",
 	],
+	colorMode: {
+		classSuffix: "",
+	},
 	apollo: {
 		autoImports: true,
 		authType: "Bearer",

@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="dark:bg-[#352F44]">
 		<Navbar />
 		<main>
 			<slot />

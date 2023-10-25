@@ -103,7 +103,9 @@ bookmarkError((error) => {
 });
 </script>
 <template>
-	<div class="shrink-0 w-full bg-white shadow-xl rounded-lg overflow-hidden">
+	<div
+		class="shrink-0 w-full bg-white dark:bg-[#5C5470] shadow-xl rounded-lg overflow-hidden"
+	>
 		<NuxtLink :to="`/recipe/${recipe?.id}`"
 			><img
 				class="w-full h-60 object-cover object-center cursor-pointer"
@@ -115,7 +117,7 @@ bookmarkError((error) => {
 		<div class="p-4">
 			<div
 				v-if="recipe?.recipe_categories.length > 0"
-				class="text-orange-500 mb-1"
+				class="text-orange-500 dark:text-[#B9B4C7] mb-1"
 			>
 				<span
 					v-for="category in recipe?.recipe_categories"
@@ -127,15 +129,10 @@ bookmarkError((error) => {
 			</div>
 
 			<h2
-				class="text-lg font-semibold text-gray-900 mb-1 flex justify-between items-center gap-x-6"
+				class="text-lg font-semibold text-gray-900 dark:text-white mb-1 flex justify-between items-center gap-x-6"
 			>
 				<p>{{ recipe?.title }}</p>
-				<!-- <NuxtRating
-					class="relative mt-1 ml-24"
-					:read-only="true"
-					:ratingValue="recipe?.reviews_aggregate?.aggregate?.avg?.rating || 0"
-					:rating-size="'18px'"
-				/> -->
+
 				<div class="">
 					<rating
 						:rating="recipe?.reviews_aggregate?.aggregate?.avg?.rating || 0"
@@ -144,12 +141,12 @@ bookmarkError((error) => {
 				</div>
 			</h2>
 
-			<p class="text-sm font-extralight text-orange-500">
+			<p class="text-sm font-extralight text-orange-500 dark:text-white">
 				{{ recipe?.duration }} min
 			</p>
 			<hr class="border-b-2 border-gray-200 my-1" />
 
-			<div class="text-sm text-gray-500 flex justify-between">
+			<div class="text-sm text-gray-500 dark:text-white flex justify-between">
 				{{ new Date(recipe?.created_at).toLocaleDateString() }}
 				<div class="flex">
 					<Icon

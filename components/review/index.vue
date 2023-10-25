@@ -90,13 +90,17 @@ const toProfile = (userid) => {
 <template>
 	<div class="w-full lg:w-[40%]">
 		<div class="mt-8 w-full">
-			<h2 class="text-xl text-orange-500 font-semibold mb-2">Reviews</h2>
+			<h2
+				class="text-xl text-orange-500 dark:text-[#FAF0E6] font-semibold mb-2"
+			>
+				Reviews
+			</h2>
 			<div class="relative max-h-96 h-full overflow-y-auto scroll">
 				<div
 					v-if="reviews"
 					v-for="(review, index) in reviews"
 					:key="index"
-					class="bg-white rounded-lg shadow-sm p-2 mb-2"
+					class="bg-white dark:bg-[#5C5470] rounded-lg shadow-sm p-2 mb-2"
 				>
 					<div class="flex items-center space-x-4">
 						<img
@@ -106,7 +110,9 @@ const toProfile = (userid) => {
 							class="cursor-pointer w-10 h-10 rounded-full"
 						/>
 						<div>
-							<p class="text-sm font-extralight text-gray-800">
+							<p
+								class="text-sm font-extralight text-gray-800 dark:text-[#FAF0E6]"
+							>
 								{{ `${review?.user?.first_name} ${review?.user?.last_name} ` }}
 							</p>
 							<NuxtRating
@@ -117,25 +123,15 @@ const toProfile = (userid) => {
 							/>
 						</div>
 					</div>
-					<p class="mt-4 text-sm text-gray-600">{{ review?.comment }}</p>
+					<p class="mt-4 text-sm text-gray-600 dark:text-[#FAF0E6]">
+						{{ review?.comment }}
+					</p>
 				</div>
 			</div>
 		</div>
 		<div v-if="store.isAuthenticated" class="relative mb-4">
 			<div class="flex justify-between mb-2">
 				<div>
-					<label for="review" class="text-lg text-orange-500 font-semibold mb-2"
-						>Add Your Review</label
-					>
-					<!-- <NuxtRating
-						:read-only="false"
-						:rating-count="10"
-						:ranewRatingting-size="'40px'"
-						:active-color="'red'"
-						:rating-value="1.2"
-						rating-content="🞺"
-						@rating-selected="logRating"
-					/> -->
 					<div class="w-8">
 						<Rating
 							v-model:rating="newRating"
@@ -146,7 +142,7 @@ const toProfile = (userid) => {
 				</div>
 				<div>
 					<img class="w-12 h-12 rounded-full" :src="store?.user?.image_url" />
-					<p class="text-xs font-thin">
+					<p class="text-xs font-thin dark:text-[#FAF0E6]">
 						{{ `${store?.user?.first_name} ${store?.user?.last_name} ` }}
 					</p>
 				</div>
@@ -156,12 +152,12 @@ const toProfile = (userid) => {
 				id="review"
 				name="review"
 				rows="3"
-				class="w-full py-2 px-4 border rounded-lg focus:outline-none focus:border-orange-500"
+				class="w-full py-2 px-4 border rounded-lg focus:outline-none dark:bg-[#B9B4C7] focus:border-orange-500 dark:focus:border-[#B9B4C7] dark:border-[#B9B4C7] dark:text-[#FAF0E6] dark:placeholder-[#FAF0E6]"
 				placeholder="Write your review here..."
 			></textarea>
 			<button
 				@click="handleAddReview()"
-				class="absolute right-9 -bottom-5 text-orange-500 text-sm font-bold"
+				class="absolute right-9 -bottom-5 text-orange-500 dark:text-[#FAF0E6] text-sm font-bold"
 			>
 				{{ muteLoading ? "Posting" : "Post Review" }}
 			</button>
